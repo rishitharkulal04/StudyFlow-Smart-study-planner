@@ -1,23 +1,114 @@
-# StudyFlow Pro 📚
+# 📚 StudyFlow Pro — Smart Study Planner
 
-A smart study planner to track subjects, manage exam dates, and plan your study schedule.
+> A beautiful, dark-themed study planner to track subjects, manage exam dates, and auto-generate your daily study schedule.
 
-## ✅ No Backend Required
+🌐 **Live Demo:** [https://study-flow-smart-study-planner.vercel.app](https://study-flow-smart-study-planner.vercel.app)
 
-This app uses **localStorage** for data persistence — no Supabase, no database, no environment variables needed. Just install and run.
+---
 
-## 🚀 Quick Start
+## ✨ Features
+
+- **📊 Dashboard** — Overview of all subjects, upcoming exams countdown, difficulty breakdown & exam timeline
+- **📖 Subjects** — Add/remove any subject with exam date, difficulty level, and study hours needed
+- **📅 Timetable** — Auto-generated weekly view and daily study plan based on days remaining
+- **📈 Progress** — Track completed vs upcoming exams with overall completion percentage
+- **💾 Persistent Storage** — All data saved in browser localStorage, no account needed
+- **🎨 Purple Dark Theme** — Premium dark UI with smooth animations and glassmorphism design
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js **18+**
+- npm
+
+### Installation
 
 ```bash
-# 1. Install dependencies
+# 1. Clone the repository
+git clone https://github.com/rishitharkulal04/StudyFlow-Smart-study-planner.git
+
+# 2. Navigate into the project
+cd StudyFlow-Smart-study-planner
+
+# 3. Install dependencies
 npm install
 
-# 2. Start the development server
+# 4. Start the development server
 npm run dev
-
-# 3. Open in browser
-# http://localhost:3000
 ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser. That's it — no database, no env variables needed! ✅
+
+---
+
+## 📁 Project Structure
+
+```
+studyflow-fixed/
+├── app/
+│   ├── api/
+│   │   └── subjects/
+│   │       ├── route.ts          # GET & POST subjects
+│   │       └── [id]/
+│   │           └── route.ts      # DELETE subject by id
+│   ├── globals.css               # Global styles & design tokens
+│   ├── layout.tsx                # Root layout with fonts
+│   └── page.tsx                  # Main page (client, localStorage)
+│
+├── components/
+│   ├── dashboard-content.tsx     # Dashboard page
+│   ├── subjects-content.tsx      # Subjects page layout
+│   ├── subject-form.tsx          # Add subject form
+│   ├── subjects-table.tsx        # Subjects list table
+│   ├── timetable-content.tsx     # Timetable page
+│   ├── progress-content.tsx      # Progress page
+│   ├── study-sidebar.tsx         # Navigation sidebar
+│   ├── theme-provider.tsx        # Theme context
+│   └── ui/                       # shadcn/ui components
+│
+├── hooks/
+│   ├── use-mobile.ts             # Mobile detection hook
+│   └── use-toast.ts              # Toast notification hook
+│
+├── lib/
+│   ├── supabase.ts               # Data layer (localStorage-based)
+│   └── utils.ts                  # Utility functions
+│
+├── next.config.mjs               # Next.js configuration
+├── tailwind.config               # Tailwind CSS v4
+├── tsconfig.json                 # TypeScript config
+└── package.json                  # Dependencies
+```
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Next.js 15** | React framework (App Router) |
+| **React 19** | UI library |
+| **TypeScript** | Type safety |
+| **Tailwind CSS v4** | Styling |
+| **shadcn/ui** | UI component library |
+| **Lucide React** | Icons |
+| **localStorage** | Data persistence (no backend needed) |
+| **Vercel** | Deployment |
+
+---
+
+## 💾 Data Storage
+
+All subject data is stored in the browser's **localStorage** under the key `studyflow_subjects`. This means:
+
+- ✅ Works completely offline
+- ✅ No sign-up or account required
+- ✅ Data persists between browser sessions
+- ⚠️ Data is per-browser/device (not synced across devices)
+
+---
 
 ## 📦 Build for Production
 
@@ -26,24 +117,34 @@ npm run build
 npm start
 ```
 
-## 🛠 Tech Stack
+---
 
-- **Next.js 15** — React framework
-- **TypeScript** — Type safety
-- **Tailwind CSS v4** — Styling
-- **localStorage** — Data persistence (browser-based, no server needed)
+## 🚀 Deploy to Vercel
 
-## 📋 Features
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/rishitharkulal04/StudyFlow-Smart-study-planner)
 
-- **Dashboard** — Overview of all subjects, upcoming exams, difficulty breakdown
-- **Subjects** — Add/remove subjects with exam dates, difficulty, and study hours
-- **Timetable** — Auto-generated daily study plan based on days remaining
-- **Progress** — Track completed vs upcoming exams
+Or manually:
+1. Push to GitHub
+2. Import on [vercel.com](https://vercel.com)
+3. Click Deploy — no environment variables needed!
 
-## 💾 Data Storage
+---
 
-All data is saved in your browser's localStorage under the key `studyflow_subjects`. Data persists between sessions on the same browser/device.
+## 📸 Screenshots
 
-## 🔧 Node.js Requirement
+| Dashboard | Subjects | Timetable | Progress |
+|---|---|---|---|
+| Stats, next exam countdown | Add & manage subjects | Weekly + daily plan | Completion tracking |
 
-Requires **Node.js 18+**. Check with: `node --version`
+---
+
+## 📄 License
+
+MIT License — feel free to use, modify, and distribute.
+
+---
+
+<div align="center">
+  <p>Built with ❤️ by <a href="https://github.com/rishitharkulal04">rishitharkulal04</a></p>
+  <p>⭐ Star this repo if you found it helpful!</p>
+</div>
