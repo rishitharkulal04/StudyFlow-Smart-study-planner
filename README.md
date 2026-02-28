@@ -140,11 +140,11 @@ Or manually:
 
 ## 📄 License
 
-MIT License — feel free to use, modify, and distribute.
+MIT License — feel free to use, modify, and   distribute.
 
 ---
 
 <div align="center">
   <p>Built with ❤️ by <a href="https://github.com/rishitharkulal04">rishitharkulal04</a></p>
   <p>⭐ Star this repo if you found it helpful!</p>
-</div>
+</div> 
